@@ -3,14 +3,14 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 //Page
-import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
+import Layout from "./pages/Layout";
 
 const browserRouter = createBrowserRouter([{
   path: "/",
-  element: <Navbar />,
+  element: <Layout />,
   children:[{
     path: "/",
     element: <Home />,
