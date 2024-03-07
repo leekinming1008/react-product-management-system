@@ -1,30 +1,27 @@
-import { Field, Form, Formik } from "formik";
-import * as yup from "yup";
+import { Field, Form, Formik, useFormik } from "formik";
+import * as Yup from "yup";
 
-const validation = yup.object({
-  name: yup.string().required("Please enter the product name"),
-  price: yup
-    .number()
+const validation = Yup.object({
+  name: Yup.string().required("Please enter the product name"),
+  price: Yup.number()
     .max(1000)
     .min(0)
     .required("Please enter the product price"),
-  description: yup
-    .string()
+  description: Yup.string()
     .max(1000)
     .required("Please enter the product description"),
-  impageUrl: yup.string().url().required("Please enter image url"),
+  impageUrl: Yup.string().url().required("Please enter image url"),
 });
 
 const ProductForm = () => {
   return (
     <Formik
       initialValues={{
+        imageUrl: "",
         name: "",
         price: 0,
         description: "",
-        imageUrl: "",
       }}
-      validationSchema={validation}
       onSubmit={(values) => {
         console.log(values);
       }}
