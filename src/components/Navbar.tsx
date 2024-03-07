@@ -11,7 +11,7 @@ const Navbar = () => {
           <Link to={"/addProduct"}>Add Product</Link>
         </li>
         <li>
-          <Link to={"/editProduct/:id"}>Edit Product</Link>
+          <Link to={"/favorites"}>Favorites</Link>
         </li>
       </ul>
     </>
