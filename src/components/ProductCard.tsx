@@ -27,7 +27,7 @@ const ProductCard = ({
   return (
     <ProductCardContainer>
       <Card sx={{ width: 345 }}>
-        <CardMedia sx={{ height: 140 }} image={imageUrl} title={name} />
+        <CardMedia sx={{ height: 300 }} image={imageUrl} title={name} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {name}
