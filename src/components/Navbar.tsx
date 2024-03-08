@@ -1,19 +1,20 @@
 import { Link } from "react-router-dom";
+import { Tab, TabList } from "@chakra-ui/tabs";
 
 const Navbar = () => {
   return (
     <>
-      <ul>
-        <li>
+      <TabList>
+        <Tab>
           <Link to={"/"}>Home Page</Link>
-        </li>
-        <li>
+        </Tab>
+        <Tab>
           <Link to={"/addProduct"}>Add Product</Link>
-        </li>
-        <li>
+        </Tab>
+        <Tab>
           <Link to={"/favorites"}>Favorites</Link>
-        </li>
-      </ul>
+        </Tab>
+      </TabList>
     </>
   );
 };
