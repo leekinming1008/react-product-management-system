@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 
 interface ProductCardProps {
   name: string;
-  price: number;
+  price: string;
   description: string;
   imageUrl: string;
 }
