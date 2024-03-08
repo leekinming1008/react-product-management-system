@@ -2,10 +2,64 @@
     "Products":
     [
         {
-            "name": "This is the demo product",
+            "name": "A380",
             "price": "50",
             "description": "This is the description",
-            "imageUrl": "https://www.airbus.com/sites/g/files/jlcbta136/files/styles/airbus_1920x1920/public/2021-11/A380-family-stage.webp?itok=Sfh20Vsk"
+            "imageUrl": "https://media.istockphoto.com/id/1366669442/photo/airbus-a380-aircraft-on-the-runway-at-farnborough-airport.jpg?s=1024x1024&w=is&k=20&c=uQJnGNk1ClY5jFMul46FfgK-8miLxYN-pdNnGfN1cXQ="
+        },
+        {
+            "name": "A350",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://www.flightradar24.com/blog/wp-content/uploads/2023/06/A350-first-flight.jpeg"
+        },
+        {
+            "name": "A340",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://media.istockphoto.com/id/482858593/photo/lufthansa-airbus-a340-300-taking-off.jpg?s=1024x1024&w=is&k=20&c=rJ90ZKzGc-_lw_LOkEESf-Q7FbXkWEtuaIJg_XkAj1s="
+        },
+        {
+            "name": "A330",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://djsaviation.net/wp-content/uploads/2023/11/41505598012_1b6e8d97c2_o-scaled-e1699167462762.jpg"
+        },
+        {
+            "name": "A320",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Airbus_A320-214%2C_Airbus_Industrie_JP7617615.jpg"
+        },
+        {
+            "name": "A321",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Airbus_A321-231%28w%29_%E2%80%98N915US%E2%80%99_American_Airlines_%2828442733186%29.jpg/1920px-Airbus_A321-231%28w%29_%E2%80%98N915US%E2%80%99_American_Airlines_%2828442733186%29.jpg"
+        },
+        {
+            "name": "B787",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://cdn.airlines-inform.ru/upload/iblock/df4/boeing-787-10.jpg"
+        },
+        {
+            "name": "B777",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cathay_Pacific_Boeing_777-200%3B_B-HNL%40HKG.jpg/2560px-Cathay_Pacific_Boeing_777-200%3B_B-HNL%40HKG.jpg"
+        },
+        {
+            "name": "B747",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://images.aircharterservice.com/global/aircraft-guide/group-charter/boeing-747-400-1.jpg"
+        },
+        {
+            "name": "B737",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://www.airlineratings.com/wp-content/uploads/uploads/FZ0EP7_737MAX10_EXP_ImageSet_02a_Thumb.jpg"
         }
     ]
     
