@@ -1,5 +1,6 @@
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import styled from "styled-components";
 
 const validation = Yup.object().shape({
   name: Yup.string().required("Please enter the product name"),
@@ -12,6 +13,10 @@ const validation = Yup.object().shape({
     .required("Please enter the product description"),
   impageUrl: Yup.string().url().required("Please enter image url"),
 });
+
+const PreviewImageSection = styled.img`
+  height: 300px;
+`;
 
 const ProductForm = () => {
   return (
@@ -27,8 +32,9 @@ const ProductForm = () => {
         console.log(values);
       }}
     >
-      {({ errors, touched }) => (
+      {({ errors, touched, values }) => (
         <Form>
+          <PreviewImageSection src={values.imageUrl} alt="invalid image url" />
           <p>Image url: </p>
           <Field name="imageUrl" type="url" />
           {errors.imageUrl && touched.imageUrl ? (
