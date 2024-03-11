@@ -9,11 +9,13 @@ import AddProduct from "./pages/AddProduct";
 import ProductDetail from "./pages/ProductDetail";
 import Layout from "./pages/Layout";
 import Favorites from "./pages/Favorites";
+import ErrorPage from "./pages/Errorpage";
 
 const browserRouter = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

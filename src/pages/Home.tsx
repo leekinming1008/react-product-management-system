@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import productList from "../data/ProductsData.json";
 import styled from "styled-components";
@@ -34,13 +35,15 @@ const Home = () => {
       <HomePageHeader>Welcome to My Aircraft Store :)</HomePageHeader>
       <ProductSection>
         {productList.Products.map((productItem) => (
-          <ProductCard
-            key={productItem.id}
-            name={productItem.name}
-            price={productItem.price}
-            description={productItem.description}
-            imageUrl={productItem.imageUrl}
-          />
+          <Link to={`/productDetail/${productItem.id}`}>
+            <ProductCard
+              key={productItem.id}
+              name={productItem.name}
+              price={productItem.price}
+              description={productItem.description}
+              imageUrl={productItem.imageUrl}
+            />
+          </Link>
         ))}
       </ProductSection>
     </div>
