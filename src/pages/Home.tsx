@@ -13,18 +13,19 @@ const ProductSection = styled.div`
 `;
 
 const HomePageHeader = styled.h1`
-  font-family: Intro;
-  font-size: 48px;
+  text-align: center;
+  font-size: 41px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
   background: -webkit-linear-gradient(
-    -91deg,
-    #eef85b 5%,
-    #7aec8d 53%,
-    #09e5c3 91%
+    right,
+    #56d8e4,
+    #9f01ea,
+    #56d8e4,
+    #9f01ea
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 58px;
-  text-align: center;
 `;
 
 const Home = () => {
