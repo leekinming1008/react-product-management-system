@@ -12,9 +12,25 @@ const ProductSection = styled.div`
   left: 50%;
 `;
 
+const HomePageHeader = styled.h1`
+  font-family: Intro;
+  font-size: 48px;
+  background: -webkit-linear-gradient(
+    -91deg,
+    #eef85b 5%,
+    #7aec8d 53%,
+    #09e5c3 91%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 58px;
+  text-align: center;
+`;
+
 const Home = () => {
   return (
     <div>
+      <HomePageHeader>Welcome to My Aircraft Store :)</HomePageHeader>
       <ProductSection>
         {productList.Products.map((productItem) => (
           <ProductCard
