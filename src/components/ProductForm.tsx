@@ -13,7 +13,7 @@ const validation = Yup.object().shape({
   description: Yup.string()
     .max(1000, "The description should <= 1000 char")
     .required("Please enter the product description"),
-  impageUrl: Yup.string().url().required("Please enter image url"),
+  imageUrl: Yup.string().url().required("Please enter image url"),
 });
 
 const PreviewImageSection = styled.img`
