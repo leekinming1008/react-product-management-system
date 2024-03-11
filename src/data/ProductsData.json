@@ -61,6 +61,12 @@
             "price": "50",
             "description": "This is the description",
             "imageUrl": "https://www.airlineratings.com/wp-content/uploads/uploads/FZ0EP7_737MAX10_EXP_ImageSet_02a_Thumb.jpg"
+        },
+        {
+            "name": "A320 Landing",
+            "price": "60",
+            "description":"This is the description",
+            "imageUrl": "https://qph.cf2.quoracdn.net/main-qimg-2bf303d2555ec6396692facee189f299"
         }
     ]
     
