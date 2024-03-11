@@ -15,7 +15,7 @@ interface ProductCardProps {
 
 const ProductCardContainer = styled.div`
   padding-left: 10px;
-  padding-bottom: 10px;
+  padding-top: 10px;
 `;
 
 const ProductCard = ({

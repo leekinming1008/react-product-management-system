@@ -9,7 +9,7 @@ import NavButton from "./NavButton";
 const Navbar = () => {
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ marginLeft: 0 }}>
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography

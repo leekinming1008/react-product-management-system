@@ -26,17 +26,18 @@
             "imageUrl": "https://djsaviation.net/wp-content/uploads/2023/11/41505598012_1b6e8d97c2_o-scaled-e1699167462762.jpg"
         },
         {
-            "name": "A320",
-            "price": "50",
-            "description": "This is the description",
-            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Airbus_A320-214%2C_Airbus_Industrie_JP7617615.jpg"
-        },
-        {
             "name": "A321",
             "price": "50",
             "description": "This is the description",
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Airbus_A321-231%28w%29_%E2%80%98N915US%E2%80%99_American_Airlines_%2828442733186%29.jpg/1920px-Airbus_A321-231%28w%29_%E2%80%98N915US%E2%80%99_American_Airlines_%2828442733186%29.jpg"
         },
+        {
+            "name": "A320",
+            "price": "50",
+            "description": "This is the description",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Airbus_A320-214%2C_Airbus_Industrie_JP7617615.jpg"
+        },
+
         {
             "name": "B787",
             "price": "50",

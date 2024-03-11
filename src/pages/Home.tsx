@@ -15,7 +15,6 @@ const ProductSection = styled.div`
 const Home = () => {
   return (
     <div>
-      Home Page
       <ProductSection>
         {productList.Products.map((productItem) => (
           <ProductCard
