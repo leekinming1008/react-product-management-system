@@ -30,11 +30,14 @@
   -webkit-text-fill-color: transparent;
 }
 .container form {
-  padding: 30px 0 0 0;
+  padding: 0px 0 0 0;
 }
 .container form .form-row {
   display: flex;
   margin: 60px 0;
+}
+.container form .image-display {
+  justify-content: center;
 }
 form .form-row .input-data {
   width: 100%;

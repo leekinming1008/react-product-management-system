@@ -43,7 +43,7 @@ const ProductForm = () => {
           <div className="container">
             <div className="text">Add New Product Form</div>
             <Form>
-              <div className="form-row">
+              <div className="image-display form-row">
                 <PreviewImageSection
                   src={values.imageUrl}
                   alt="invalid image url"
