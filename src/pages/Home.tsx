@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import productList from "../data/ProductsData.json";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
+import { getAllProducts } from "../api/productApi";
+import { ProductType } from "../types/product";
 
 const ProductSection = styled.div`
   display: flex;
@@ -30,18 +33,36 @@ const HomePageHeader = styled.h1`
 `;
 
 const Home = () => {
+  const [products, setProducts] = useState<ProductType[]>([]);
+
+  // use Effect will call if the component is update
+  // for dependance, it can tell when to run the use effect when the dependance updated
+  useEffect(() => {
+    const fatchProducts = async () => {
+      try {
+        const response = await getAllProducts();
+        setProducts(response.data);
+        console.log(response);
+      } catch (err) {
+        console.error("Error fetching products: ", err);
+      }
+    };
+    fatchProducts();
+  }, []);
   return (
     <div>
       <HomePageHeader>Welcome to My Aircraft Store :)</HomePageHeader>
       <ProductSection>
-        {productList.Products.map((productItem) => (
+        {products.map((productItem) => (
           <Link to={`/productDetail/${productItem.id}`}>
             <ProductCard
-              key={productItem.id}
-              name={productItem.name}
+              id={productItem.id}
+              title={productItem.title}
               price={productItem.price}
-              description={productItem.shortDescription}
-              imageUrl={productItem.imageUrl}
+              description={productItem.description}
+              image={productItem.image}
+              category={productItem.category}
+              rating={productItem.rating}
             />
           </Link>
         ))}

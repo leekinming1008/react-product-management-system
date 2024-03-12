@@ -5,37 +5,26 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import styled from "styled-components";
-
-interface ProductCardProps {
-  name: string;
-  price: string;
-  description: string;
-  imageUrl: string;
-}
+import { ProductType } from "../types/product";
 
 const ProductCardContainer = styled.div`
   padding-left: 10px;
   padding-top: 10px;
 `;
 
-const ProductCard = ({
-  name,
-  price,
-  description,
-  imageUrl,
-}: ProductCardProps) => {
+const ProductCard = ({ title, price, description, image }: ProductType) => {
   return (
     <ProductCardContainer>
       <Card sx={{ width: 345 }}>
         <CardMedia
           sx={{ height: 300 }}
           component="img"
-          src={imageUrl}
-          title={name}
+          src={image}
+          title={title}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {name}
+            {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {description} <br />
