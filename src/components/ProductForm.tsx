@@ -1,22 +1,21 @@
 import { Field, Form, Formik } from "formik";
-import * as Yup from "yup";
 import styled from "styled-components";
 import ErrorMessageContainer from "./ErrorMessageContainer";
+import * as Yup from "yup";
 import "../css/ProductForm.css";
+import { createProduct } from "../api/productApi";
 
 const validation = Yup.object().shape({
-  name: Yup.string().required("Please enter the product name"),
+  title: Yup.string().required("Please enter the product name"),
   price: Yup.number()
     .max(1000, "The price should <1000")
     .min(1, "The price should >= 1")
     .required("Please enter the product price"),
-  shortDescription: Yup.string()
+  description: Yup.string()
     .max(1000, "The description should <= 1000 char")
     .required("Please enter the product short description"),
-  longDescription: Yup.string().required(
-    "Please enter the product long description"
-  ),
-  imageUrl: Yup.string().url().required("Please enter image url"),
+  category: Yup.string().required("Please enter the product long description"),
+  image: Yup.string().url().required("Please enter image url"),
 });
 
 const PreviewImageSection = styled.img`
@@ -32,15 +31,17 @@ const ProductForm = () => {
     <ProductFormContainer>
       <Formik
         initialValues={{
-          imageUrl: "",
-          name: "",
+          image: "",
+          title: "",
           price: 0,
-          shortDescription: "",
-          longDescription: "",
+          description: "",
+          category: "",
+          rating: { rate: 0, count: 0 },
         }}
         validationSchema={validation}
-        onSubmit={(values) => {
+        onSubmit={async (values) => {
           console.log(values);
+          await createProduct(values);
         }}
       >
         {({ errors, touched, values }) => (
@@ -49,15 +50,15 @@ const ProductForm = () => {
             <Form>
               <div className="image-display form-row">
                 <PreviewImageSection
-                  src={values.imageUrl}
+                  src={values.image}
                   alt="invalid image url"
                 />
               </div>
               <div className="form-row">
                 <div className="input-data">
-                  <Field name="imageUrl" type="url" />
-                  {errors.imageUrl && touched.imageUrl ? (
-                    <ErrorMessageContainer name="imageUrl" />
+                  <Field name="image" type="url" />
+                  {errors.image && touched.image ? (
+                    <ErrorMessageContainer name="image" />
                   ) : null}
                   <div className="underline"></div>
                   <label>Image URL</label>
@@ -65,9 +66,9 @@ const ProductForm = () => {
               </div>
               <div className="form-row">
                 <div className="input-data">
-                  <Field name="name" type="text" />
-                  {errors.name && touched.name ? (
-                    <ErrorMessageContainer name="name" />
+                  <Field name="title" type="text" />
+                  {errors.title && touched.title ? (
+                    <ErrorMessageContainer name="title" />
                   ) : null}
                   <div className="underline"></div>
                   <label>Product Name</label>
@@ -83,22 +84,22 @@ const ProductForm = () => {
               </div>
               <div className="form-row">
                 <div className="input-data">
-                  <Field name="shortDescription" type="text" />
-                  {errors.shortDescription && touched.shortDescription ? (
-                    <ErrorMessageContainer name="shortDescription" />
+                  <Field name="category" type="text" />
+                  {errors.category && touched.category ? (
+                    <ErrorMessageContainer name="category" />
                   ) : null}
                   <div className="underline"></div>
-                  <label>Short Description</label>
+                  <label>Category</label>
                 </div>
               </div>
               <div className="form-row">
                 <div className="input-data">
-                  <Field name="longDescription" type="text" />
-                  {errors.longDescription && touched.longDescription ? (
-                    <ErrorMessageContainer name="longDescription" />
+                  <Field name="description" type="text" />
+                  {errors.description && touched.description ? (
+                    <ErrorMessageContainer name="description" />
                   ) : null}
                   <div className="underline"></div>
-                  <label>Detail Description</label>
+                  <label>Description</label>
                 </div>
               </div>
               <div className="form-row">
