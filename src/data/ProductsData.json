@@ -5,48 +5,48 @@
             "id": "1",
             "name": "A380",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "This is the long description",
+            "shortDescription": "This is the description",
+            "longDescription": "This is the long description",
             "imageUrl": "https://media.istockphoto.com/id/1366669442/photo/airbus-a380-aircraft-on-the-runway-at-farnborough-airport.jpg?s=1024x1024&w=is&k=20&c=uQJnGNk1ClY5jFMul46FfgK-8miLxYN-pdNnGfN1cXQ="
         },
         {
             "id": "2",
             "name": "A350",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "The Airbus A350 is a long-range, wide-body twin-engine jet airliner developed and produced by Airbus. The initial A350 design proposed by Airbus in 2004, in response to the Boeing 787 Dreamliner, would have been a development of the Airbus A330 with composite wings and new engines. Due to inadequate market support, Airbus switched in 2006 to a clean-sheet 'XWB' (eXtra Wide Body) design, powered by two Rolls-Royce Trent XWB high bypass turbofan engines. The prototype first flew on 14 June 2013 from Toulouse, France. Type certification from the European Aviation Safety Agency (EASA) was obtained in September 2014, followed by certification from the Federal Aviation Administration (FAA) two months later.",
+            "shortDescription": "This is the description",
+            "longDescription": "The Airbus A350 is a long-range, wide-body twin-engine jet airliner developed and produced by Airbus. The initial A350 design proposed by Airbus in 2004, in response to the Boeing 787 Dreamliner, would have been a development of the Airbus A330 with composite wings and new engines. Due to inadequate market support, Airbus switched in 2006 to a clean-sheet 'XWB' (eXtra Wide Body) design, powered by two Rolls-Royce Trent XWB high bypass turbofan engines. The prototype first flew on 14 June 2013 from Toulouse, France. Type certification from the European Aviation Safety Agency (EASA) was obtained in September 2014, followed by certification from the Federal Aviation Administration (FAA) two months later.",
             "imageUrl": "https://www.flightradar24.com/blog/wp-content/uploads/2023/06/A350-first-flight.jpeg"
         },
         {
             "id": "3",
             "name": "A340",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "This is the description",
+            "shortDescription": "This is the description",
+            "longDescription": "This is the description",
             "imageUrl": "https://media.istockphoto.com/id/482858593/photo/lufthansa-airbus-a340-300-taking-off.jpg?s=1024x1024&w=is&k=20&c=rJ90ZKzGc-_lw_LOkEESf-Q7FbXkWEtuaIJg_XkAj1s="
         },
         {
             "id": "4",
             "name": "A330",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "This is the description",
+            "shortDescription": "This is the description",
+            "longDescription": "This is the description",
             "imageUrl": "https://djsaviation.net/wp-content/uploads/2023/11/41505598012_1b6e8d97c2_o-scaled-e1699167462762.jpg"
         },
         {
             "id": "5",
             "name": "A321",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "This is the description",
+            "shortDescription": "This is the description",
+            "longDescription": "This is the description",
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Airbus_A321-231%28w%29_%E2%80%98N915US%E2%80%99_American_Airlines_%2828442733186%29.jpg/1920px-Airbus_A321-231%28w%29_%E2%80%98N915US%E2%80%99_American_Airlines_%2828442733186%29.jpg"
         },
         {
             "id": "6",
             "name": "A320",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "This is the description",
+            "shortDescription": "This is the description",
+            "longDescription": "This is the description",
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Airbus_A320-214%2C_Airbus_Industrie_JP7617615.jpg"
         },
 
@@ -54,40 +54,40 @@
             "id": "7",
             "name": "B787",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "This is the description",
+            "shortDescription": "This is the description",
+            "longDescription": "This is the description",
             "imageUrl": "https://cdn.airlines-inform.ru/upload/iblock/df4/boeing-787-10.jpg"
         },
         {
             "id": "8",
             "name": "B777",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "This is the description",
+            "shortDescription": "This is the description",
+            "longDescription": "This is the description",
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Cathay_Pacific_Boeing_777-200%3B_B-HNL%40HKG.jpg/2560px-Cathay_Pacific_Boeing_777-200%3B_B-HNL%40HKG.jpg"
         },
         {
             "id": "9",
             "name": "B747",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "This is the description",
+            "shortDescription": "This is the description",
+            "longDescription": "This is the description",
             "imageUrl": "https://images.aircharterservice.com/global/aircraft-guide/group-charter/boeing-747-400-1.jpg"
         },
         {   
             "id": "10",
             "name": "B737",
             "price": "50",
-            "short-description": "This is the description",
-            "long-description": "This is the description",
+            "shortDescription": "This is the description",
+            "longDescription": "This is the description",
             "imageUrl": "https://www.airlineratings.com/wp-content/uploads/uploads/FZ0EP7_737MAX10_EXP_ImageSet_02a_Thumb.jpg"
         },
         {
             "id": "11",
             "name": "A320 Landing",
             "price": "60",
-            "short-description": "This is the description",
-            "long-description":"This is the description",
+            "shortDescription": "This is the description",
+            "longDescription":"This is the description",
             "imageUrl": "https://qph.cf2.quoracdn.net/main-qimg-2bf303d2555ec6396692facee189f299"
         }
     ]
