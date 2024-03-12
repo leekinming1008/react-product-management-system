@@ -12,7 +12,7 @@
             "id": "2",
             "name": "A350",
             "price": "50",
-            "description": "This is the description",
+            "description": "The Airbus A350 is a long-range, wide-body twin-engine jet airliner developed and produced by Airbus. The initial A350 design proposed by Airbus in 2004, in response to the Boeing 787 Dreamliner, would have been a development of the Airbus A330 with composite wings and new engines. Due to inadequate market support, Airbus switched in 2006 to a clean-sheet 'XWB' (eXtra Wide Body) design, powered by two Rolls-Royce Trent XWB high bypass turbofan engines. The prototype first flew on 14 June 2013 from Toulouse, France. Type certification from the European Aviation Safety Agency (EASA) was obtained in September 2014, followed by certification from the Federal Aviation Administration (FAA) two months later.",
             "imageUrl": "https://www.flightradar24.com/blog/wp-content/uploads/2023/06/A350-first-flight.jpeg"
         },
         {
