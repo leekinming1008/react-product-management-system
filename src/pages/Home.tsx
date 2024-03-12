@@ -53,17 +53,16 @@ const Home = () => {
       <HomePageHeader>Welcome to My Store :)</HomePageHeader>
       <ProductSection>
         {products.map((productItem) => (
-          <Link to={`/productDetail/${productItem.id}`}>
-            <ProductCard
-              id={productItem.id}
-              title={productItem.title}
-              price={productItem.price}
-              description={productItem.description}
-              image={productItem.image}
-              category={productItem.category}
-              rating={productItem.rating}
-            />
-          </Link>
+          <ProductCard
+            key={productItem.id}
+            id={productItem.id}
+            title={productItem.title}
+            price={productItem.price}
+            description={productItem.description}
+            image={productItem.image}
+            category={productItem.category}
+            rating={productItem.rating}
+          />
         ))}
       </ProductSection>
     </div>
