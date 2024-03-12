@@ -8,7 +8,7 @@ interface Product {
   id: string;
   name: string;
   price: string;
-  "long-description": string;
+  longDescription: string;
   imageUrl: string;
 }
 
@@ -58,7 +58,7 @@ const ProductDetail = () => {
                 </div>
                 <div className="_p-features">
                   <span> Description About this product:- </span>
-                  <p>{currentProduct?.["long-description"]}</p>
+                  <p>{currentProduct?.longDescription}</p>
                 </div>
               </div>
             </div>

@@ -10,9 +10,12 @@ const validation = Yup.object().shape({
     .max(1000, "The price should <1000")
     .min(1, "The price should >= 1")
     .required("Please enter the product price"),
-  "short-description": Yup.string()
+  shortDescription: Yup.string()
     .max(1000, "The description should <= 1000 char")
-    .required("Please enter the product description"),
+    .required("Please enter the product short description"),
+  longDescription: Yup.string().required(
+    "Please enter the product long description"
+  ),
   imageUrl: Yup.string().url().required("Please enter image url"),
 });
 
@@ -32,8 +35,8 @@ const ProductForm = () => {
           imageUrl: "",
           name: "",
           price: 0,
-          "short-description": "",
-          "long-description": "",
+          shortDescription: "",
+          longDescription: "",
         }}
         validationSchema={validation}
         onSubmit={(values) => {
@@ -80,13 +83,22 @@ const ProductForm = () => {
               </div>
               <div className="form-row">
                 <div className="input-data">
-                  <Field name="short-description" type="text" />
-                  {errors["short-description"] &&
-                  touched["short-description"] ? (
-                    <ErrorMessageContainer name="short-description" />
+                  <Field name="shortDescription" type="text" />
+                  {errors.shortDescription && touched.shortDescription ? (
+                    <ErrorMessageContainer name="shortDescription" />
                   ) : null}
                   <div className="underline"></div>
                   <label>Short Description</label>
+                </div>
+              </div>
+              <div className="form-row">
+                <div className="input-data">
+                  <Field name="longDescription" type="text" />
+                  {errors.longDescription && touched.longDescription ? (
+                    <ErrorMessageContainer name="longDescription" />
+                  ) : null}
+                  <div className="underline"></div>
+                  <label>Detail Description</label>
                 </div>
               </div>
               <div className="form-row">
