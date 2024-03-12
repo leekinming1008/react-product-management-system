@@ -13,6 +13,17 @@ const ProductCardContainer = styled.div`
   padding-top: 10px;
 `;
 
+const handleAddRemoveFavorite = (event: React.MouseEvent) => {
+  const id = event.currentTarget.getAttribute("id");
+  if (id && !localStorage.getItem(id)) {
+    localStorage.setItem(id, id);
+    event.currentTarget.textContent = "Remove from favorites";
+  } else if (id) {
+    localStorage.removeItem(id);
+    event.currentTarget.textContent = "Add to favorites";
+  }
+};
+
 const ProductCard = ({ id, title, price, description, image }: ProductType) => {
   return (
     <ProductCardContainer>
@@ -50,7 +61,15 @@ const ProductCard = ({ id, title, price, description, image }: ProductType) => {
           </CardContent>
         </Link>
         <CardActions>
-          <Button size="small">Add to favorites</Button>
+          <Button
+            size="small"
+            id={id.toString()}
+            onClick={handleAddRemoveFavorite}
+          >
+            {localStorage.getItem(id.toString())
+              ? "Remove from favorities"
+              : "Add to favorities"}
+          </Button>
         </CardActions>
       </Card>
     </ProductCardContainer>

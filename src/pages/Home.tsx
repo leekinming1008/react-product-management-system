@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
@@ -40,7 +39,6 @@ const Home = () => {
     const fatchProducts = async () => {
       try {
         const response = await getAllProducts();
-        console.log(response.data);
         setProducts(response.data);
       } catch (err) {
         console.error("Error fetching products: ", err);
@@ -48,6 +46,7 @@ const Home = () => {
     };
     fatchProducts();
   }, []);
+
   return (
     <div>
       <HomePageHeader>Welcome to My Store :)</HomePageHeader>
