@@ -23,13 +23,20 @@ const ProductCard = ({ title, price, description, image }: ProductType) => {
           title={title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" height="70px">
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {description} <br />
-            CAD$ {price}
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            height="100px"
+            overflow="hidden"
+            whiteSpace="normal"
+            textOverflow="ellipsis"
+          >
+            {description}
           </Typography>
+          <Typography>CAD$ {price}</Typography>
         </CardContent>
         <CardActions>
           <Button size="small">Add to favorites</Button>

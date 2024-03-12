@@ -15,7 +15,6 @@ const ProductDetail = () => {
       }
       try {
         const response = await getProduct(id);
-        console.log(response.data);
         setCurrentProduct(response.data);
       } catch (err) {
         console.error("Error fetching products: ", err);
@@ -24,20 +23,6 @@ const ProductDetail = () => {
     getCurrentProduct();
   }, []);
   return (
-    // <>
-    //   <PreviewImageSection
-    //     src={currentProduct?.imageUrl}
-    //     alt="invalid image url"
-    //   />
-    //   <label>Image URL</label>
-    //   {currentProduct?.imageUrl}
-    //   <label>Product Name</label>
-    //   {currentProduct?.name}
-    //   <label>Price</label>
-    //   {currentProduct?.price}
-    //   <label>Description</label>
-    //   {currentProduct?.description}
-    // </>
     <section id="services" className="services section-bg">
       <div className="container-fluid">
         <div className="row row-sm">

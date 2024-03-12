@@ -42,7 +42,6 @@ const Home = () => {
       try {
         const response = await getAllProducts();
         setProducts(response.data);
-        console.log(response);
       } catch (err) {
         console.error("Error fetching products: ", err);
       }
@@ -51,7 +50,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <HomePageHeader>Welcome to My Aircraft Store :)</HomePageHeader>
+      <HomePageHeader>Welcome to My Store :)</HomePageHeader>
       <ProductSection>
         {products.map((productItem) => (
           <Link to={`/productDetail/${productItem.id}`}>
