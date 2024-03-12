@@ -23,7 +23,15 @@ const ProductCard = ({ title, price, description, image }: ProductType) => {
           title={title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" height="70px">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            height="100px"
+            overflow="hidden"
+            whiteSpace="normal"
+            textOverflow="ellipsis"
+          >
             {title}
           </Typography>
           <Typography

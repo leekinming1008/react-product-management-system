@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
-import productList from "../data/ProductsData.json";
 import styled from "styled-components";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../api/productApi";
@@ -41,6 +40,7 @@ const Home = () => {
     const fatchProducts = async () => {
       try {
         const response = await getAllProducts();
+        console.log(response.data);
         setProducts(response.data);
       } catch (err) {
         console.error("Error fetching products: ", err);
