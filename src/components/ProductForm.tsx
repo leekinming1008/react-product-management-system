@@ -10,7 +10,7 @@ const validation = Yup.object().shape({
     .max(1000, "The price should <1000")
     .min(1, "The price should >= 1")
     .required("Please enter the product price"),
-  description: Yup.string()
+  "short-description": Yup.string()
     .max(1000, "The description should <= 1000 char")
     .required("Please enter the product description"),
   imageUrl: Yup.string().url().required("Please enter image url"),
@@ -32,7 +32,8 @@ const ProductForm = () => {
           imageUrl: "",
           name: "",
           price: 0,
-          description: "",
+          "short-description": "",
+          "long-description": "",
         }}
         validationSchema={validation}
         onSubmit={(values) => {
@@ -79,12 +80,13 @@ const ProductForm = () => {
               </div>
               <div className="form-row">
                 <div className="input-data">
-                  <Field name="description" type="text" />
-                  {errors.description && touched.description ? (
-                    <ErrorMessageContainer name="description" />
+                  <Field name="short-description" type="text" />
+                  {errors["short-description"] &&
+                  touched["short-description"] ? (
+                    <ErrorMessageContainer name="short-description" />
                   ) : null}
                   <div className="underline"></div>
-                  <label>Description</label>
+                  <label>Short Description</label>
                 </div>
               </div>
               <div className="form-row">

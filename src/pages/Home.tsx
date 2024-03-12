@@ -40,7 +40,7 @@ const Home = () => {
               key={productItem.id}
               name={productItem.name}
               price={productItem.price}
-              description={productItem.description}
+              description={productItem["short-description"]}
               imageUrl={productItem.imageUrl}
             />
           </Link>
