@@ -1,13 +1,16 @@
 import axios from "axios";
 import { ProductObjectType } from "../types/Product.o";
 
+const productUrl = import.meta.env.VITE_BASE_URL;
+
 // GET all products
-const getAllProducts = () => axios.get("https://fakestoreapi.com/products");
+const getAllProducts = () => axios.get(productUrl);
 
-const getProduct = (id: string) =>
-  axios.get(`https://fakestoreapi.com/products/${id}`);
+// GET a particular product
+const getProduct = (id: string) => axios.get(`${productUrl}/${id}`);
 
+// POST for a new product
 const createProduct = (newItem: ProductObjectType) =>
-  axios.post("https://fakestoreapi.com/products", { newItem });
+  axios.post(productUrl, { newItem });
 
 export { getAllProducts, getProduct, createProduct };

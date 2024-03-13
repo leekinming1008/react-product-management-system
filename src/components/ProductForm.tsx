@@ -39,9 +39,21 @@ const ProductForm = () => {
           rating: { rate: 0, count: 0 },
         }}
         validationSchema={validation}
-        onSubmit={async (values) => {
-          console.log(values);
-          await createProduct(values);
+        onSubmit={async (values, { resetForm }) => {
+          try {
+            const response = await createProduct(values);
+            if (response.status == 200) {
+              alert("You have successfully add the product!! :)");
+              console.log(response.data);
+            }
+          } catch (error) {
+            console.error(
+              "There have error when try to create the product!",
+              error
+            );
+          } finally {
+            resetForm();
+          }
         }}
       >
         {({ errors, touched, values }) => (
