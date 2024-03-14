@@ -15,13 +15,24 @@ const ProductCardContainer = styled.div`
 
 const handleAddRemoveFavorite = (event: React.MouseEvent) => {
   const id = event.currentTarget.getAttribute("id");
-  if (id && !localStorage.getItem(id)) {
-    localStorage.setItem(id, id);
-    event.currentTarget.textContent = "Remove from favorites";
-  } else if (id) {
-    localStorage.removeItem(id);
-    event.currentTarget.textContent = "Add to favorites";
+  const favoriteList = localStorage.getItem("favorite");
+  const favoriteListJSON: string[] = favoriteList
+    ? JSON.parse(favoriteList)
+    : null;
+  if (id && !favoriteListJSON) {
+    localStorage.setItem("favorite", JSON.stringify([id]));
+  } else if (id && favoriteListJSON) {
+    if (favoriteListJSON.includes(id)) {
+      favoriteListJSON.splice(favoriteListJSON.indexOf(id), 1);
+      localStorage.setItem("favorite", JSON.stringify(favoriteListJSON));
+      event.currentTarget.textContent = "Add to favorites";
+    } else {
+      favoriteListJSON.push(id);
+      localStorage.setItem("favorite", JSON.stringify(favoriteListJSON));
+      event.currentTarget.textContent = "Remove from favorites";
+    }
   }
+  location.reload();
 };
 
 const ProductCard = ({ id, title, price, description, image }: ProductType) => {
@@ -66,7 +77,10 @@ const ProductCard = ({ id, title, price, description, image }: ProductType) => {
             id={id.toString()}
             onClick={handleAddRemoveFavorite}
           >
-            {localStorage.getItem(id.toString())
+            {localStorage.getItem("favorite") &&
+            JSON.stringify(localStorage.getItem("favorite")).includes(
+              id.toString()
+            )
               ? "Remove from favorities"
               : "Add to favorities"}
           </Button>

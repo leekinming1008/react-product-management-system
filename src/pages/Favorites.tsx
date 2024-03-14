@@ -49,7 +49,14 @@ const Favorites = () => {
         console.error("Error fetching products: ", err);
       }
     };
-    Object.keys(localStorage).forEach((key) => fetchFavorites(key));
+    const favoriteList = localStorage.getItem("favorite");
+    const favoriteListJSON: string[] = favoriteList
+      ? JSON.parse(favoriteList)
+      : null;
+    favoriteListJSON &&
+      favoriteListJSON.forEach((productId) => {
+        fetchFavorites(productId);
+      });
   }, []);
   return (
     <div>
