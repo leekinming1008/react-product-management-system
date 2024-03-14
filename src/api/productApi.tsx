@@ -13,4 +13,6 @@ const getProduct = (id: string) => axios.get(`${productUrl}/${id}`);
 const createProduct = (newItem: ProductObjectType) =>
   axios.post(productUrl, { newItem });
 
-export { getAllProducts, getProduct, createProduct };
+const deleteProdct = (id: string) => axios.delete(`${productUrl}/${id}`);
+
+export { getAllProducts, getProduct, createProduct, deleteProdct };

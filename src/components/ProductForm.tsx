@@ -2,8 +2,8 @@ import { Field, Form, Formik } from "formik";
 import styled from "styled-components";
 import ErrorMessageContainer from "./ErrorMessageContainer";
 import * as Yup from "yup";
-import "../css/ProductForm.css";
 import { createProduct } from "../api/productApi";
+import "../css/ProductForm.css";
 
 const validation = Yup.object().shape({
   title: Yup.string().required("Please enter the product name"),
