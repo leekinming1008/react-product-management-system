@@ -60,7 +60,11 @@ const Favorites = () => {
   }, []);
   return (
     <div>
-      <HomePageHeader>Here is all your favorities here :)</HomePageHeader>
+      <HomePageHeader>
+        {favoritesProducts.length != 0
+          ? "Here is all your favorities here :)"
+          : "You don't add any favorites yet, please go to home page and add the product you like!! :))"}
+      </HomePageHeader>
       <ProductSection>
         {favoritesProducts.map((productItem) => (
           <ProductCard
