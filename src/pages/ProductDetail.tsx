@@ -1,20 +1,24 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { deleteProdct, getProduct } from "../api/productApi";
+import { deleteProduct, getProduct } from "../api/productApi";
 import { ProductType } from "../types/product";
 import { PacmanLoader } from "react-spinners";
 import "../css/ProductDetail.css";
+import { Button } from "@mui/material";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const [currentProduct, setCurrentProduct] = useState<ProductType>();
-  const handleDeleteProdct = async () => {
+  const nav = useNavigate();
+
+  const handleDeleteProduct = async () => {
     const userChooise = window.confirm("Are you sure to delect this product?");
     if (userChooise && id) {
       try {
-        const response = await deleteProdct(id);
+        const response = await deleteProduct(id);
         if (response.status == 200) {
-          document.location.href = "/";
+          console.log(response.data);
+          nav("/");
           window.alert(
             `You have successfully delete the product ${currentProduct?.title}`
           );
@@ -24,6 +28,11 @@ const ProductDetail = () => {
       }
     }
   };
+
+  const haneleEditProduct = async () => {
+    window.alert("Edit function is still under development");
+  };
+
   useEffect(() => {
     const getCurrentProduct = async () => {
       if (!id) {
@@ -32,6 +41,7 @@ const ProductDetail = () => {
       }
       try {
         const response = await getProduct(id);
+        console.log(response);
         setCurrentProduct(response.data);
       } catch (err) {
         console.error("Error fetching products: ", err);
@@ -62,8 +72,8 @@ const ProductDetail = () => {
               </div>
             </div>
             <div className="col-md-6">
-              <button>Edit product</button>
-              <button onClick={handleDeleteProdct}>Delete Product</button>
+              <Button onClick={haneleEditProduct}>Edit product</Button>
+              <Button onClick={handleDeleteProduct}>Delete Product</Button>
             </div>
           </div>
         </div>

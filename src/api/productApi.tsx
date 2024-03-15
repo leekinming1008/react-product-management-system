@@ -13,6 +13,17 @@ const getProduct = (id: string) => axios.get(`${productUrl}/${id}`);
 const createProduct = (newItem: ProductObjectType) =>
   axios.post(productUrl, { newItem });
 
-const deleteProdct = (id: string) => axios.delete(`${productUrl}/${id}`);
+// DELETE for delete particular product
+const deleteProduct = (id: string) => axios.delete(`${productUrl}/${id}`);
 
-export { getAllProducts, getProduct, createProduct, deleteProdct };
+const updateProduct = (id: string, product: ProductObjectType) => {
+  axios.patch(`${productUrl}/${id}`, product);
+};
+
+export {
+  getAllProducts,
+  getProduct,
+  createProduct,
+  deleteProduct,
+  updateProduct,
+};
