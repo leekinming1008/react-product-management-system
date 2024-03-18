@@ -8,14 +8,15 @@ interface NavButtonProps {
 
 const NavButton = ({ name, link }: NavButtonProps) => {
   return (
-    <Button
-      href={link}
-      key={name}
-      sx={{ my: 2, color: "white", display: "block" }}
-    >
-      <Link to={link}></Link>
-      {name}
-    </Button>
+    <Link to={link}>
+      <Button
+        href={link}
+        key={name}
+        sx={{ my: 2, color: "white", display: "block" }}
+      >
+        {name}
+      </Button>
+    </Link>
   );
 };
 
