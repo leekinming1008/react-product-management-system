@@ -1,9 +1,12 @@
 import { Field, Form, Formik } from "formik";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 import styled from "styled-components";
-import ErrorMessageContainer from "./ErrorMessageContainer";
 import * as Yup from "yup";
-import { createProduct } from "../api/productApi";
+
 import "../css/ProductForm.css";
+import { createProduct, getProduct } from "../api/productApi";
+import ErrorMessageContainer from "./ErrorMessageContainer";
 
 const validation = Yup.object().shape({
   title: Yup.string().required("Please enter the product name"),
@@ -27,6 +30,28 @@ const ProductFormContainer = styled.div`
 `;
 
 const ProductForm = () => {
+  const { id } = useParams();
+  //const [currentProduct, setCurrentProduct] = useState<ProductType>();
+  // const SetupDefaultValue = () => {
+  //   console.log("Enter the set up default value function. ");
+  //   if (currentProduct) {
+  //   }
+  //   return null;
+  // };
+  useEffect(() => {
+    console.log("this id is " + id);
+    const fatchProduct = async (id: string) => {
+      try {
+        const response = await getProduct(id);
+        if (response.status == 200) {
+          //setCurrentProduct(response.data);
+        }
+      } catch (err) {
+        console.log("Have error during the delete process", err);
+      }
+    };
+    id && fatchProduct(id);
+  }, []);
   return (
     <ProductFormContainer>
       <Formik

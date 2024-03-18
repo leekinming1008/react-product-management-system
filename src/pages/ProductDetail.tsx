@@ -30,6 +30,7 @@ const ProductDetail = () => {
   };
 
   const haneleEditProduct = async () => {
+    nav(`/editProduct/${id}`);
     window.alert("Edit function is still under development");
   };
 

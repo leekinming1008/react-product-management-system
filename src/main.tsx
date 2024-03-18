@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./main.css";
@@ -10,6 +9,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Layout from "./pages/Layout";
 import Favorites from "./pages/Favorites";
 import ErrorPage from "./pages/Errorpage";
+import EditProduct from "./pages/EditProduct";
 
 const browserRouter = createBrowserRouter([
   {
@@ -30,6 +30,7 @@ const browserRouter = createBrowserRouter([
         element: <ProductDetail />,
       },
       { path: "/favorites", element: <Favorites /> },
+      { path: "/editProduct/:id", element: <EditProduct /> },
     ],
   },
 ]);
