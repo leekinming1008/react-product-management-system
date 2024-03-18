@@ -13,8 +13,12 @@ This is the project using React.js to view, create, update and delete operations
 ```
 
 ## Screen Short
-#Home Page
+# Home Page
 ![image](https://github.com/leekinming1008/react-product-management-system/assets/161342574/52850321-6c52-4b26-89ed-50d03d9f8d63)
+
+# Product detail Page
+<img width="1263" alt="image" src="https://github.com/leekinming1008/react-product-management-system/assets/161342574/3dd87689-acac-49f3-a4c1-b65416acaab8">
+
 
 
 ##Reference
