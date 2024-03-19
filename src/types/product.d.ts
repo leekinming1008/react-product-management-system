@@ -1,14 +1,10 @@
 export interface ProductType{
-    id : number,
-    title: string,
-    price: number,
-    description: string,
-    category: string,
+    _id: string,
     image: string,
-    rating: RatingType,
-}
-
-interface RatingType {
-    rate: number,
-    count: number
+    factory:string,
+    name: string,
+    price: number,
+    description: string,   
+    airline: string,     
+    year:  number,       
 }

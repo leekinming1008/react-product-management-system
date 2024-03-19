@@ -35,16 +35,16 @@ const handleAddRemoveFavorite = (event: React.MouseEvent) => {
   location.reload();
 };
 
-const ProductCard = ({ id, title, price, description, image }: ProductType) => {
+const ProductCard = ({ _id, image, name, price, description }: ProductType) => {
   return (
     <ProductCardContainer>
       <Card sx={{ width: 345 }}>
-        <Link to={`/productDetail/${id}`}>
+        <Link to={`/productDetail/${_id}`}>
           <CardMedia
             sx={{ height: 300 }}
             component="img"
             src={image}
-            title={title}
+            title={name}
           />
           <CardContent>
             <Typography
@@ -56,7 +56,7 @@ const ProductCard = ({ id, title, price, description, image }: ProductType) => {
               whiteSpace="normal"
               textOverflow="ellipsis"
             >
-              {title}
+              {name}
             </Typography>
             <Typography
               variant="body2"
@@ -68,19 +68,13 @@ const ProductCard = ({ id, title, price, description, image }: ProductType) => {
             >
               {description}
             </Typography>
-            <Typography>CAD$ {price}</Typography>
+            <Typography>CAD$ {price.toString()}</Typography>
           </CardContent>
         </Link>
         <CardActions>
-          <Button
-            size="small"
-            id={id.toString()}
-            onClick={handleAddRemoveFavorite}
-          >
+          <Button size="small" id={_id} onClick={handleAddRemoveFavorite}>
             {localStorage.getItem("favorite") &&
-            JSON.stringify(localStorage.getItem("favorite")).includes(
-              id.toString()
-            )
+            JSON.stringify(localStorage.getItem("favorite")).includes(_id)
               ? "Remove from favorities"
               : "Add to favorities"}
           </Button>

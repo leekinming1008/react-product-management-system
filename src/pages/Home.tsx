@@ -39,7 +39,8 @@ const Home = () => {
     const fatchProducts = async () => {
       try {
         const response = await getAllProducts();
-        setProducts(response.data);
+        //console.log(response.data.data);
+        setProducts(response.data.data);
       } catch (err) {
         console.error("Error fetching products: ", err);
       }
@@ -53,14 +54,15 @@ const Home = () => {
       <ProductSection>
         {products.map((productItem) => (
           <ProductCard
-            key={productItem.id}
-            id={productItem.id}
-            title={productItem.title}
+            key={productItem._id}
+            _id={productItem._id}
+            image={productItem.image}
+            factory={productItem.factory}
+            name={productItem.name}
             price={productItem.price}
             description={productItem.description}
-            image={productItem.image}
-            category={productItem.category}
-            rating={productItem.rating}
+            airline={productItem.airline}
+            year={productItem.year}
           />
         ))}
       </ProductSection>
