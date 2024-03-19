@@ -20,7 +20,7 @@ const ProductDetail = () => {
           console.log(response.data);
           nav("/");
           window.alert(
-            `You have successfully delete the product ${currentProduct?.title}`
+            `You have successfully delete the product ${currentProduct?.name}`
           );
         }
       } catch (err) {
@@ -61,7 +61,7 @@ const ProductDetail = () => {
           </div>
           <div className="col-md-6">
             <div className="_product-detail-content">
-              <p className="_p-name"> {currentProduct?.title} </p>
+              <p className="_p-name"> {currentProduct?.name} </p>
               <div className="_p-price-box">
                 <div className="p-list">
                   <span>CAD : {currentProduct?.price}</span>

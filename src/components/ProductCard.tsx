@@ -51,7 +51,7 @@ const ProductCard = ({ _id, image, name, price, description }: ProductType) => {
               gutterBottom
               variant="h5"
               component="div"
-              height="100px"
+              height="30px"
               overflow="hidden"
               whiteSpace="normal"
               textOverflow="ellipsis"
