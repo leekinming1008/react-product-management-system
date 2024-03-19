@@ -11,7 +11,7 @@ const getProduct = (id: string) => axios.get(`${productUrl}/${id}`);
 
 // POST for a new product
 const createProduct = (newItem: ProductObjectType) =>
-  axios.post(productUrl, { newItem });
+  axios.post(productUrl, newItem);
 
 // DELETE for delete particular product
 const deleteProduct = (id: string) => axios.delete(`${productUrl}/${id}`);

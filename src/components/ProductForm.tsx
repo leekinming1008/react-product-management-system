@@ -9,16 +9,18 @@ import { createProduct, getProduct } from "../api/productApi";
 import ErrorMessageContainer from "./ErrorMessageContainer";
 
 const validation = Yup.object().shape({
-  title: Yup.string().required("Please enter the product name"),
+  image: Yup.string().url().required("Please enter image url"),
+  factory: Yup.string().required("Please enter the factory name"),
+  name: Yup.string().required("Please enter the name"),
   price: Yup.number()
     .max(1000, "The price should <1000")
     .min(1, "The price should >= 1")
     .required("Please enter the product price"),
   description: Yup.string()
     .max(1000, "The description should <= 1000 char")
-    .required("Please enter the product short description"),
-  category: Yup.string().required("Please enter the product long description"),
-  image: Yup.string().url().required("Please enter image url"),
+    .required("Please enter the description"),
+  airline: Yup.string().required("Please enter the airline"),
+  year: Yup.number().required("Please enter the year"),
 });
 
 const PreviewImageSection = styled.img`
@@ -57,17 +59,18 @@ const ProductForm = () => {
       <Formik
         initialValues={{
           image: "",
-          title: "",
+          factory: "",
+          name: "",
           price: 0,
           description: "",
-          category: "",
-          rating: { rate: 0, count: 0 },
+          airline: "",
+          year: 0,
         }}
         validationSchema={validation}
         onSubmit={async (values, { resetForm }) => {
           try {
             const response = await createProduct(values);
-            if (response.status == 200) {
+            if (response.status == 201) {
               alert("You have successfully add the product!! :)");
               console.log(response.data);
             }
@@ -103,12 +106,20 @@ const ProductForm = () => {
               </div>
               <div className="form-row">
                 <div className="input-data">
-                  <Field name="title" type="text" />
-                  {errors.title && touched.title ? (
-                    <ErrorMessageContainer name="title" />
+                  <Field name="name" type="text" />
+                  {errors.name && touched.name ? (
+                    <ErrorMessageContainer name="name" />
                   ) : null}
                   <div className="underline"></div>
-                  <label>Product Name</label>
+                  <label>Aircraft Name</label>
+                </div>
+                <div className="input-data">
+                  <Field name="factory" type="text" />
+                  {errors.factory && touched.factory ? (
+                    <ErrorMessageContainer name="factory" />
+                  ) : null}
+                  <div className="underline"></div>
+                  <label>Factory</label>
                 </div>
                 <div className="input-data">
                   <Field name="price" type="number" />
@@ -121,12 +132,20 @@ const ProductForm = () => {
               </div>
               <div className="form-row">
                 <div className="input-data">
-                  <Field name="category" type="text" />
-                  {errors.category && touched.category ? (
-                    <ErrorMessageContainer name="category" />
+                  <Field name="airline" type="text" />
+                  {errors.airline && touched.airline ? (
+                    <ErrorMessageContainer name="airline" />
                   ) : null}
                   <div className="underline"></div>
-                  <label>Category</label>
+                  <label>Airline</label>
+                </div>
+                <div className="input-data">
+                  <Field name="year" type="number" />
+                  {errors.year && touched.year ? (
+                    <ErrorMessageContainer name="year" />
+                  ) : null}
+                  <div className="underline"></div>
+                  <label>Production Year</label>
                 </div>
               </div>
               <div className="form-row">
