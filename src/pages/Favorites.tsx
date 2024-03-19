@@ -68,14 +68,15 @@ const Favorites = () => {
       <ProductSection>
         {favoritesProducts.map((productItem) => (
           <ProductCard
-            key={productItem.id}
-            id={productItem.id}
-            title={productItem.title}
+            key={productItem._id}
+            _id={productItem._id}
+            image={productItem.image}
+            factory={productItem.factory}
+            name={productItem.name}
             price={productItem.price}
             description={productItem.description}
-            image={productItem.image}
-            category={productItem.category}
-            rating={productItem.rating}
+            airline={productItem.airline}
+            year={productItem.year}
           />
         ))}
       </ProductSection>
