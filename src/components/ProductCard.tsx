@@ -35,7 +35,14 @@ const handleAddRemoveFavorite = (event: React.MouseEvent) => {
   location.reload();
 };
 
-const ProductCard = ({ _id, image, name, price, description }: ProductType) => {
+const ProductCard = ({
+  _id,
+  image,
+  factory,
+  name,
+  price,
+  description,
+}: ProductType) => {
   return (
     <ProductCardContainer>
       <Card sx={{ width: 345 }}>
@@ -56,7 +63,7 @@ const ProductCard = ({ _id, image, name, price, description }: ProductType) => {
               whiteSpace="normal"
               textOverflow="ellipsis"
             >
-              {name}
+              {factory} {name}
             </Typography>
             <Typography
               variant="body2"

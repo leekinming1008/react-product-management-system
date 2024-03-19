@@ -42,7 +42,6 @@ const ProductDetail = () => {
       }
       try {
         const response = await getProduct(id);
-        console.log(response);
         setCurrentProduct(response.data);
       } catch (err) {
         console.error("Error fetching products: ", err);
@@ -61,14 +60,18 @@ const ProductDetail = () => {
           </div>
           <div className="col-md-6">
             <div className="_product-detail-content">
-              <p className="_p-name"> {currentProduct?.name} </p>
+              <p className="_p-name">
+                {" "}
+                {currentProduct?.factory} {currentProduct?.name}
+                <div>{currentProduct?.year}</div>
+              </p>
               <div className="_p-price-box">
-                <div className="p-list">
-                  <span>CAD : {currentProduct?.price}</span>
-                </div>
                 <div className="_p-features">
-                  <span> Description About this product:- </span>
+                  <span> Description About this product: </span>
                   <p>{currentProduct?.description}</p>
+                </div>
+                <div className="p-list">
+                  <span>CAD$ {currentProduct?.price}</span>
                 </div>
               </div>
             </div>
