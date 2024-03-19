@@ -16,7 +16,7 @@ const ProductDetail = () => {
     if (userChooise && id) {
       try {
         const response = await deleteProduct(id);
-        if (response.status == 200) {
+        if (response.status == 202) {
           console.log(response.data);
           nav("/");
           window.alert(
@@ -42,7 +42,8 @@ const ProductDetail = () => {
       }
       try {
         const response = await getProduct(id);
-        setCurrentProduct(response.data);
+        console.log(response);
+        setCurrentProduct(response.data.data);
       } catch (err) {
         console.error("Error fetching products: ", err);
       }
