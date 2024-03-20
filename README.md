@@ -1,6 +1,6 @@
 # Markdown Previewer
 
-This is the project using React.js to view, create, update and delete operations to https://fakestoreapi.com API.
+This is the project using React.js to view, create, update and delete operations based on https://github.com/leekinming1008/productBackend project.
 
 ## Build Project
 ```bash
