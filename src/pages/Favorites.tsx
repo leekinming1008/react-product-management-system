@@ -41,7 +41,6 @@ const Favorites = () => {
       }
       try {
         const response = await getProduct(id);
-        console.log(response.data);
         setFavoritesProducts((prevOrderItems) => [
           ...prevOrderItems,
           response.data.data,
@@ -56,7 +55,6 @@ const Favorites = () => {
       : null;
     favoriteListJSON &&
       favoriteListJSON.forEach((productId) => {
-        console.log(productId);
         fetchFavorites(productId);
       });
   }, []);
