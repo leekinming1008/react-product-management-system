@@ -43,7 +43,7 @@ const Favorites = () => {
         const response = await getProduct(id);
         setFavoritesProducts((prevOrderItems) => [
           ...prevOrderItems,
-          response.data,
+          response.data.data,
         ]);
       } catch (err) {
         console.error("Error fetching products: ", err);
