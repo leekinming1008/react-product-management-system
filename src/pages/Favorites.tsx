@@ -61,24 +61,25 @@ const Favorites = () => {
   return (
     <div>
       <HomePageHeader>
-        {favoritesProducts.length != 0
+        {favoritesProducts && favoritesProducts.length != 0
           ? "Here is all your favorities here :)"
           : "You don't add any favorites yet, please go to home page and add the product you like!! :))"}
       </HomePageHeader>
       <ProductSection>
-        {favoritesProducts.map((productItem) => (
-          <ProductCard
-            key={productItem._id}
-            _id={productItem._id}
-            image={productItem.image}
-            factory={productItem.factory}
-            name={productItem.name}
-            price={productItem.price}
-            description={productItem.description}
-            airline={productItem.airline}
-            year={productItem.year}
-          />
-        ))}
+        {favoritesProducts &&
+          favoritesProducts.map((productItem) => (
+            <ProductCard
+              key={productItem._id}
+              _id={productItem._id}
+              image={productItem.image}
+              factory={productItem.factory}
+              name={productItem.name}
+              price={productItem.price}
+              description={productItem.description}
+              airline={productItem.airline}
+              year={productItem.year}
+            />
+          ))}
       </ProductSection>
     </div>
   );
