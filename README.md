@@ -14,14 +14,23 @@ This is the project using React.js to view, create, update and delete operations
 
 ## Screen Short
 # Home Page
-![image](https://github.com/leekinming1008/react-product-management-system/assets/161342574/52850321-6c52-4b26-89ed-50d03d9f8d63)
+![image](https://github.com/leekinming1008/react-product-management-system/assets/161342574/629f6b93-95e8-41a4-8c68-c87f8ae7c8b9)
 
-# Product detail Page
-<img width="1263" alt="image" src="https://github.com/leekinming1008/react-product-management-system/assets/161342574/3dd87689-acac-49f3-a4c1-b65416acaab8">
+# Product Detail Page
+![image](https://github.com/leekinming1008/react-product-management-system/assets/161342574/4c4daf2b-0da3-461c-9ae5-116201dce517)
+
+# Add New Product Page
+![image](https://github.com/leekinming1008/react-product-management-system/assets/161342574/4e10dfb8-3895-463f-ab17-84bac1da880f)
+
+# Edit Product Page
+![image](https://github.com/leekinming1008/react-product-management-system/assets/161342574/52478a99-2cf7-497a-9b8b-9eabbb5094e2)
+
+# Favorites Page
+![image](https://github.com/leekinming1008/react-product-management-system/assets/161342574/b919186d-8432-46c1-af26-f505590d0cbf)
 
 
 
-##Reference
-The API is referencing from https://fakestoreapi.com
+
+
 
 
