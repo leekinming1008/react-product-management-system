@@ -42,6 +42,8 @@ const ProductDetailTable = ({ currentProduct }: any) => {
               <p className="_p-name">
                 {" "}
                 {currentProduct?.factory} {currentProduct?.name}
+                {" - "}
+                {currentProduct?.airline}
                 <div>{currentProduct?.year}</div>
               </p>
               <div className="_p-price-box">
