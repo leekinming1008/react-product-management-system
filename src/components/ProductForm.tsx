@@ -41,7 +41,6 @@ const ProductForm = () => {
   //   return null;
   // };
   useEffect(() => {
-    console.log("this id is " + id);
     const fatchProduct = async (id: string) => {
       try {
         const response = await getProduct(id);
