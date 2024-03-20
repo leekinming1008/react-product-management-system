@@ -16,10 +16,8 @@ const createProduct = (newItem: ProductObjectType) =>
 // DELETE for delete particular product
 const deleteProduct = (id: string) => axios.delete(`${productUrl}/${id}`);
 
-const updateProduct = (id: string, product: ProductObjectType) => {
+const updateProduct = (id: string, product: ProductObjectType) =>
   axios.patch(`${productUrl}/${id}`, product);
-};
-
 export {
   getAllProducts,
   getProduct,

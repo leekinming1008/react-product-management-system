@@ -1,15 +1,18 @@
-import { Field, Form, Formik } from "formik";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { Field, Form, Formik, useFormikContext } from "formik";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import * as Yup from "yup";
 
 import "../css/ProductForm.css";
-import { createProduct, getProduct } from "../api/productApi";
+import { updateProduct, getProduct, createProduct } from "../api/productApi";
 import ErrorMessageContainer from "./ErrorMessageContainer";
+import { ProductType } from "../types/product";
 
 const validation = Yup.object().shape({
-  image: Yup.string().url().required("Please enter image url"),
+  image: Yup.string()
+    .url("Please input valid URL")
+    .required("Please enter image url"),
   factory: Yup.string().required("Please enter the factory name"),
   name: Yup.string().required("Please enter the name"),
   price: Yup.number()
@@ -33,19 +36,22 @@ const ProductFormContainer = styled.div`
 
 const ProductForm = () => {
   const { id } = useParams();
-  //const [currentProduct, setCurrentProduct] = useState<ProductType>();
-  // const SetupDefaultValue = () => {
-  //   console.log("Enter the set up default value function. ");
-  //   if (currentProduct) {
-  //   }
-  //   return null;
-  // };
+  const [currentProduct, setCurrentProduct] = useState<ProductType>();
+  const SetupDefaultValue = () => {
+    const { values, resetForm } = useFormikContext<ProductType>();
+    useEffect(() => {
+      Object.assign(values, currentProduct);
+      resetForm();
+    }, []);
+    return null;
+  };
+
   useEffect(() => {
     const fatchProduct = async (id: string) => {
       try {
         const response = await getProduct(id);
         if (response.status == 200) {
-          //setCurrentProduct(response.data);
+          setCurrentProduct(response.data.data);
         }
       } catch (err) {
         console.log("Have error during the delete process", err);
@@ -53,10 +59,13 @@ const ProductForm = () => {
     };
     id && fatchProduct(id);
   }, []);
+  const nav = useNavigate();
+
   return (
     <ProductFormContainer>
       <Formik
         initialValues={{
+          _id: "",
           image: "",
           factory: "",
           name: "",
@@ -68,10 +77,17 @@ const ProductForm = () => {
         validationSchema={validation}
         onSubmit={async (values, { resetForm }) => {
           try {
-            const response = await createProduct(values);
-            if (response.status == 201) {
-              alert("You have successfully add the product!! :)");
-              console.log(response.data);
+            var response;
+            if (id) {
+              response = await updateProduct(id, values);
+              if (response?.status == 201) {
+                alert("You have successfully edit the product!! :)");
+              }
+            } else {
+              response = await createProduct(values);
+              if (response?.status == 201) {
+                alert("You have successfully add the product!! :)");
+              }
             }
           } catch (error) {
             console.error(
@@ -80,12 +96,15 @@ const ProductForm = () => {
             );
           } finally {
             resetForm();
+            nav("/");
           }
         }}
       >
         {({ errors, touched, values }) => (
           <div className="container">
-            <div className="text">Add New Product Form</div>
+            <div className="text">
+              {id ? "Edit Product Form" : "Add New Product Form"}
+            </div>
             <Form>
               <div className="image-display form-row">
                 <PreviewImageSection
@@ -157,6 +176,7 @@ const ProductForm = () => {
                   <label>Description</label>
                 </div>
               </div>
+              <SetupDefaultValue />
               <div className="form-row">
                 <div className="form-row submit-btn">
                   <div className="input-data">

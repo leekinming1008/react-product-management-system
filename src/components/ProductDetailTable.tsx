@@ -8,7 +8,6 @@ const ProductDetailTable = ({ currentProduct }: any) => {
   const { id } = useParams();
   const haneleEditProduct = async () => {
     nav(`/editProduct/${id}`);
-    window.alert("Edit function is still under development");
   };
 
   const handleDeleteProduct = async () => {
